@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JavaScript Projects | Osazuwa Ogbebor</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #4f46e5;
+  --accent-soft: #eef2ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #ffffff, #f1f5f9);
+  color: var(--text);
+  padding: 70px 20px;
+}
+
+.container {
+  max-width: 1150px;
+  margin: auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+header p {
+  max-width: 650px;
+  margin: auto;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 32px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: 0.3s ease;
+}
+
+.live {
+  background: var(--accent);
+  color: white;
+}
+
+.live:hover {
+  background: #4338ca;
+}
+
+.code {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.code:hover {
+  background: #f1f5f9;
+}
+
+footer {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+  <h1>Vanilla JavaScript Projects</h1>
+  <p>
+    A curated collection of frontend applications built with pure HTML, CSS, and JavaScript.
+    Focused on DOM manipulation, browser storage, logic building, and UI interaction.
+  </p>
+</header>
+
+<section class="grid">
+
+  <!-- Bookmark Saver -->
+  <div class="card">
+    <div>
+      <h2>Bookmark Saver</h2>
+      <p>Save and manage website bookmarks using localStorage for persistent browser-based storage.</p>
+      <div class="tags">
+        <span class="tag">localStorage</span>
+        <span class="tag">CRUD</span>
+        <span class="tag">DOM</span>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn live" href="bookmark-saver/">Live Demo</a>
+      <a class="btn code" href="https://github.com/YOURUSERNAME/js-projects/tree/main/bookmark-saver" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <!-- Colour Palette Generator -->
+  <div class="card">
+    <div>
+      <h2>Colour Palette Generator</h2>
+      <p>Generate random color palettes with copy-to-clipboard functionality.</p>
+      <div class="tags">
+        <span class="tag">Events</span>
+        <span class="tag">Clipboard API</span>
+        <span class="tag">UI Rendering</span>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn live" href="colour-pallete-generator/">Live Demo</a>
+      <a class="btn code" href="https://github.com/YOURUSERNAME/js-projects/tree/main/colour-pallete-generator" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <!-- Password Generator -->
+  <div class="card">
+    <div>
+      <h2>Password Generator</h2>
+      <p>Generate secure random passwords with customizable rules and character sets.</p>
+      <div class="tags">
+        <span class="tag">Algorithm</span>
+        <span class="tag">Logic</span>
+        <span class="tag">UI Feedback</span>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn live" href="password-generator/">Live Demo</a>
+      <a class="btn code" href="https://github.com/YOURUSERNAME/js-projects/tree/main/password-generator" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <!-- Expense Tracker -->
+  <div class="card">
+    <div>
+      <h2>Expense Tracker</h2>
+      <p>Track income and expenses with automatic balance calculation and storage persistence.</p>
+      <div class="tags">
+        <span class="tag">State</span>
+        <span class="tag">localStorage</span>
+        <span class="tag">Array Methods</span>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn live" href="expense-tracker/">Live Demo</a>
+      <a class="btn code" href="https://github.com/YOURUSERNAME/js-projects/tree/main/expense-tracker" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <!-- Form Validator -->
+  <div class="card">
+    <div>
+      <h2>Form Validator</h2>
+      <p>Client-side validation with dynamic error messaging and regex validation rules.</p>
+      <div class="tags">
+        <span class="tag">Validation</span>
+        <span class="tag">Regex</span>
+        <span class="tag">UX</span>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn live" href="form-validator/">Live Demo</a>
+      <a class="btn code" href="https://github.com/YOURUSERNAME/js-projects/tree/main/form-validator" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <!-- Kanban Board -->
+  <div class="card">
+    <div>
+      <h2>Kanban Board</h2>
+      <p>Drag-and-drop task management system demonstrating interactive DOM patterns.</p>
+      <div class="tags">
+        <span class="tag">Drag & Drop</span>
+        <span class="tag">DOM</span>
+        <span class="tag">UI Patterns</span>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn live" href="kanbanBoard/">Live Demo</a>
+      <a class="btn code" href="https://github.com/YOURUSERNAME/js-projects/tree/main/kanbanBoard" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <!-- Quiz Game -->
+  <div class="card">
+    <div>
+      <h2>Quiz Game</h2>
+      <p>Interactive quiz application with dynamic question rendering and score tracking.</p>
+      <div class="tags">
+        <span class="tag">Dynamic Rendering</span>
+        <span class="tag">State</span>
+        <span class="tag">Logic</span>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn live" href="quizGame/">Live Demo</a>
+      <a class="btn code" href="https://github.com/YOURUSERNAME/js-projects/tree/main/quizGame" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Osazuwa Ogbebor — Built with Vanilla JavaScript
+</footer>
+
+</div>
+</body>
+</html>

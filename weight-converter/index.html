@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body {
+            margin-top: 70px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-center mb-3">Weight Converter</h1>
+                <form>
+                    <div class="form-group mb-3">
+                        <input 
+                        type="number" name="weight" id="weight"
+                        class="form-control form-control-lg mb-1"
+                        placeholder="Enter Weight Value...">
+                        <select class="form-select text-bg-warning" name="" id="weight-unit">
+                            <option  selected value="pounds">Pounds</option>
+                            <option value="grams">Grams</option>
+                            <option value="kilograms">Kilograms</option>
+                            <option value="ounces">Ounces</option>
+                        </select>
+                    </div>
+                </form>
+                <div id="output">
+                    <div class="card text-bg-primary mb-2 p-2">
+                        <div class="card-block">
+                            <h4 id="output1-heading">Ouput 1:</h4>
+                            <div id="output1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card text-bg-success mb-2 p-2">
+                        <div class="card-block">
+                            <h4 id="output2-heading">Output 2:</h4>
+                            <div id="output2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card text-bg-danger mb-2 p-2">
+                        <div class="card-block">
+                            <h4 id="output3-heading">Output 3:</h4>
+                            <div id="output3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("output").style.visibility = 'hidden';
+
+        document.getElementById("weight").addEventListener("input", function(e){
+            document.getElementById("output").style.visibility = 'visible';
+
+            const selectEl = document.getElementById("weight-unit");
+
+            const unit = selectEl.value;
+            const weightValue = e.target.value;
+
+            switch (unit.toLowerCase().trim()) {
+                case "grams":
+                    document.getElementById("output1-heading").innerHTML = "Pounds";
+                    document.getElementById("output1").innerHTML = weightValue * 0.00220462262;
+                    
+                    document.getElementById("output2-heading").innerHTML = "Kilograms";
+                    document.getElementById("output2").innerHTML = weightValue * 0.001;
+                    
+                    document.getElementById("output3-heading").innerHTML = "Ounces";
+                    document.getElementById("output3").innerHTML = weightValue * 0.0352739619;
+                    
+                    break;
+            
+                case "kilograms":
+                    document.getElementById("output1-heading").innerHTML = "Pounds";
+                    document.getElementById("output1").innerHTML = weightValue * 2.20462262;
+                    
+                    document.getElementById("output2-heading").innerHTML = "Grams";
+                    document.getElementById("output2").innerHTML = weightValue * 1000;
+                    
+                    document.getElementById("output3-heading").innerHTML = "Ounces";
+                    document.getElementById("output3").innerHTML = weightValue * 35.2739619;
+                    
+                    break;
+            
+                case "ounces":
+                    document.getElementById("output1-heading").innerHTML = "Grams";
+                    document.getElementById("output1").innerHTML = weightValue * 28.3495231;
+                    
+                    document.getElementById("output2-heading").innerHTML = "Kilograms";
+                    document.getElementById("output2").innerHTML = weightValue * 0.0283495231;
+                    
+                    document.getElementById("output3-heading").innerHTML = "Pounds";
+                    document.getElementById("output3").innerHTML = weightValue * 0.0625;
+                    
+                    break;
+            
+                default:
+                    document.getElementById("output1-heading").innerHTML = "Grams";
+                    document.getElementById("output1").innerHTML = weightValue * 453.59237;
+                    
+                    document.getElementById("output2-heading").innerHTML = "Kilograms";
+                    document.getElementById("output2").innerHTML = weightValue * 0.45359237;
+                    
+                    document.getElementById("output3-heading").innerHTML = "Ounces";
+                    document.getElementById("output3").innerHTML = weightValue * 16;
+                    
+                    break;
+            }
+        })
+    </script>
+</body>
+</html>
+
+
